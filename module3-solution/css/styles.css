@@ -1,0 +1,78 @@
+* {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 16px;
+}
+/* HEADER */
+#header-nav {
+  background-color: #999999;
+  border-radius: 0;
+  border: 2px solid #000;
+}
+#header-nav .navbar-brand {
+  color: #000;
+  font-size: 1.7em;
+}
+#nav-list {
+  margin: 0px -15px;
+  border-top: 2px solid black;
+}
+#nav-list a {
+  background-color: #fff;
+  color: #000;
+}
+#nav-list a:hover {
+  background-color: #999999;
+}
+#nav-list hr {
+  margin: 0;
+  border-color: black;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid black;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+}
+/* END HEADER */
+
+/* APP-CONTENT */
+.app-content {
+  margin-bottom: 20px;
+}
+.app-title {
+  margin: 20px 0;
+}
+.app-title label {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+.box {
+  background-color: #999999;
+  border: 2px solid black;
+  height: auto;
+  position: relative;
+  margin: 10px;
+}
+
+.box .title-box {
+  padding-top: 5px;
+  font-weight: bold;
+}
+.box .title-box label {
+  font-size: 1.3em;
+}
+
+.box .content-box {
+  padding: 5px 15px 10px;
+}
+.box .content-box section {
+  clear: left;
+}
+/* END APP-CONTENT */
+
+@media (max-width: 690px) {
+  .box .content-box {
+    font-size: 1.1em;
+  }
+}
