@@ -15,6 +15,9 @@
       font-style: italic;
       padding: 7px 5px;
     }
+    input[type="text"] {
+      margin-bottom: 15px;
+    }
   </style>
 </head>
 <body ng-controller="LunchCheckController">
@@ -25,19 +28,12 @@
       <label class="label label-info">You must consider that all element inside commas without any character is an empty element, i.e., <code>, ,</code></label>
     </div>
 
-    <div class="form-group">
-      <input id="lunch-menu" type="text"
-      placeholder="List comma separated dishes you usually have for lunch"
-      class="form-control"
-      ng-model="dishes"
-      ng-style="inputBorderColor">
-    </div>
-    <div class="form-group">
+    <form class="form-group">
+      <input type="text" placeholder="List comma separated dishes you usually have for lunch" class="form-control" ng-model="dishes" style="{{inputBorderColor}}">
       <button class="btn btn-default" ng-click="checkDishes();">Check If Too Much</button>
-    </div>
-    <div class="form-group message" ng-style="messageColor">
-      {{message}}
-    </div>
+    </form>
+
+    <div class="message" style="{{messageColor}}">{{message}}</div>
   </div>
 
   <script type="text/javascript" src="js/angular.min.js"></script>
