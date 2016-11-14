@@ -11,10 +11,11 @@
     vm.notFound = false;
 
     vm.filterItems = function () {
+      vm.notFound = false;
+      vm.found = [];
+
       if (vm.searchTerm.length) {
         vm.loading = true;
-        vm.found = [];
-        vm.notFound = false;
 
         MenuSearchService.getMatchedMenuItems(vm.searchTerm)
         .then(function (response) {
