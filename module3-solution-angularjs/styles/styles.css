@@ -1,0 +1,57 @@
+h1 {
+  margin-bottom: 30px;
+}
+.bold {
+  font-weight: bold;
+}
+.btn-warning {
+  margin-bottom: 10px;
+}
+.be-red {
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+}
+.input-group {
+  margin-bottom: 30px;
+}
+
+
+.spinner {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+.bubble-1, .bubble-2 {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #4b9cdb;
+}
+
+.bubble-2 {
+  top: auto;
+  bottom: 0;
+}
+
+.loading .spinner {
+  animation: loadingI 2s linear infinite;
+}
+.loading .bubble-1, .loading .bubble-2 {
+  animation: bounce 2s ease-in-out infinite;
+}
+.loading .bubble-2 {
+  animation-delay: -1.0s;
+}
+
+@keyframes loadingI {
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes bounce  {
+  0%, 100% {transform: scale(0.0);}
+  50% {transform: scale(1.0);}
+}

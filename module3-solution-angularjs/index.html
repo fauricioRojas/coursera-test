@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="NarrowItDownApp">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body>
+   <div class="container" ng-controller="NarrowItDownController as narrowItDownCtrl">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <form class="input-group">
+      <input type="text" class="form-control" ng-model="narrowItDownCtrl.searchTerm" placeholder="Enter a search term...">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" ng-click="narrowItDownCtrl.filterItems();">Narrow It Down For Me!</button>
+      </span>
+    </form>
+
+    <div class="row col-md-12 col-sm-12 col-xs-12">
+      <found-items items="narrowItDownCtrl.found" on-remove="narrowItDownCtrl.removeItem(list, itemIndex);"></found-items>
+    </div>
+
+    <div class="row col-md-12 col-sm-12 col-xs-12" ng-if="narrowItDownCtrl.loading">
+      <loading></loading>
+    </div>
+
+    <div class="row col-md-12 col-sm-12 col-xs-12" ng-if="narrowItDownCtrl.notFound">
+      <section class="be-red">Nothing found!</section>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/services/MenuSearchService.js"></script>
+  <script type="text/javascript" src="js/controllers/NarrowItDownController.js"></script>
+  <script type="text/javascript" src="js/directives/foundItems/FoundItemsDirective.js"></script>
+  <script type="text/javascript" src="js/directives/loading/LoadingDirective.js"></script>
+</body>
+</html>

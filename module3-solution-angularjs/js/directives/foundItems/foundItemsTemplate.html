@@ -1,0 +1,14 @@
+<ol>
+  <li ng-repeat="item in foundItemsCtrl.items track by item.id">
+    <section>
+      <span class="bold">Name:</span> {{ item.name }}
+    </section>
+    <section>
+      <span class="bold">Short name:</span> {{ item.short_name }}
+    </section>
+     <p>
+       <span class="bold">Description:</span> {{ item.description }}
+     </p>
+    <button class="btn btn-warning" ng-click="foundItemsCtrl.onRemove({index: $index});">Don't want this one!</button>
+  </li>
+</ol>
