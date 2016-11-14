@@ -11,20 +11,24 @@
     vm.notFound = false;
 
     vm.filterItems = function () {
-      vm.loading = true;
-      vm.found = [];
-      vm.notFound = false;
+      if (vm.searchTerm.length) {
+        vm.loading = true;
+        vm.found = [];
+        vm.notFound = false;
 
-      MenuSearchService.getMatchedMenuItems(vm.searchTerm)
-      .then(function (response) {
-        vm.found = response;
+        MenuSearchService.getMatchedMenuItems(vm.searchTerm)
+        .then(function (response) {
+          vm.found = response;
 
-        if (!vm.found.length) {
-          vm.notFound = true;
-        }
+          if (!vm.found.length) {
+            vm.notFound = true;
+          }
 
-        vm.loading = false;
-      });
+          vm.loading = false;
+        });
+      } else {
+        vm.notFound = true;
+      }
     };
 
     vm.removeItem = function (itemIndex) {
