@@ -8,6 +8,7 @@
     vm.searchTerm = '';
     vm.found = [];
     vm.loading = false;
+    vm.notFound = false;
 
     vm.filterItems = function () {
       vm.loading = true;
